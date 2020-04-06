@@ -1,0 +1,10 @@
+<h1>Projects Page</h1>
+
+<ul>
+<% @projects.each do |p| %>
+  <b><li><%= link_to p.title, p %></b>: <%= p.summary %></li>
+<% end %>
+</ul>
+
+<h2>Create Project</h2>
+<%= button_to "Create", new_project_path, method: :get %>

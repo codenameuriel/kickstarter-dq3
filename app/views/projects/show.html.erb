@@ -1,0 +1,11 @@
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+
+<h1><%=@project.title%></h1>
+<p><%=@project.summary%></p> 
+
+
+<%= button_to "Delete project", @project, method: :delete%>
+<%= button_to "Edit", edit_project_path, method: :get%>
+<%= button_to "Back", projects_path, method: :get %>

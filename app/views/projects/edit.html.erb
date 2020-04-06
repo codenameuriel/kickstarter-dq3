@@ -1,0 +1,20 @@
+<h1>Edit Project</h1>
+
+<% if flash[:errors] %>
+  <ul> 
+    <% flash[:errors].each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_with model: @project do |f| %>
+Title: <%= f.text_field :title %><br><br>
+Description: <%= f.text_area :summary %><br><br>
+<%= f.submit %>
+<% end %>
+
+<%= button_to "Delete", project_path, method: :delete %>
+<%= button_to "Back", project_path, method: :get %>
+
+
